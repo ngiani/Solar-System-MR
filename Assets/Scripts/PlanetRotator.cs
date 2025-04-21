@@ -38,7 +38,10 @@ public class PlanetRotator : MonoBehaviour
             
 
         else if (planetViewer.ViewMode == PlanetViewer.PlanetViewMode.PLANET)
+        {
             planetGrabRotationEnabled = false;
+        }
+           
     }
 
     private void OnStartRotating()
@@ -55,7 +58,10 @@ public class PlanetRotator : MonoBehaviour
             
 
         else if (planetViewer.ViewMode == PlanetViewer.PlanetViewMode.PLANET)
+        {
             planetGrabRotationEnabled = true;
+        }
+            
     }
 
 

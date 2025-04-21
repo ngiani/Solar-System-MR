@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Experimental.GlobalIllumination;
 
 public class SolarSystem : MonoBehaviour
 {
@@ -6,14 +7,14 @@ public class SolarSystem : MonoBehaviour
     public bool SystemRotationEnabled => systemRotationEnabled;
 
     [SerializeField] float selfRotationSpeed;
+    [SerializeField] private PlanetViewer[] planets;
+    [SerializeField] private AsteroidsViewer asteroids;
+    [SerializeField] private SunViewer sunViewer;
+    [SerializeField] private SolarySystemTTTS solarSystemTTS;
+    [SerializeField] private Light pointLight;
+
 
     PlanetScaler selectedPlanet;
-
-    [SerializeField] PlanetViewer[] planets;
-    [SerializeField] AsteroidsViewer asteroids;
-    [SerializeField] SunViewer sun;
-    [SerializeField] SolarySystemTTTS solarSystemTTS;
-
     bool hidden;
 
 
@@ -51,7 +52,9 @@ public class SolarSystem : MonoBehaviour
 
         asteroids.HideAsteroid();
 
-        sun.HideSun();
+        sunViewer.HideSun();
+
+        pointLight.enabled = false;
 
         hidden = true;
     }
@@ -66,9 +69,11 @@ public class SolarSystem : MonoBehaviour
                 planet.ShowPlanet();
         }
 
-        sun.ShowSun();
+        sunViewer.ShowSun();
 
         asteroids.ShowAsteroid();
+
+        pointLight.enabled = true;
 
         hidden = false;
     }
@@ -81,5 +86,28 @@ public class SolarSystem : MonoBehaviour
     public void DisableSystemRotation()
     {
         systemRotationEnabled = false;
+    }
+
+
+    public void DisableGrabColliders()
+    {
+        GetComponent<Collider>().enabled = false;
+
+        foreach (var planet in planets)
+        {
+            if (!planet.gameObject.Equals(selectedPlanet.gameObject))
+                planet.GetComponent<Collider>().enabled = false;
+        }
+    }
+
+    public void EnableGrabColliders()
+    {
+        GetComponent<Collider>().enabled = true;
+
+        foreach (var planet in planets)
+        {
+            if (!planet.gameObject.Equals(selectedPlanet.gameObject))
+                planet.GetComponent<Collider>().enabled = true;
+        }
     }
 }

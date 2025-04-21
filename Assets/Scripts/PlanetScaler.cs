@@ -49,6 +49,7 @@ public class PlanetScaler : MonoBehaviour
 
                 sun.DisableSystemRotation();
                 sun.HideNonSelectedPlanets();
+                sun.DisableGrabColliders();
 
                 systemTTS.Stop();
                 planetTTS.Play();
@@ -75,6 +76,7 @@ public class PlanetScaler : MonoBehaviour
 
                 sun.EnableSystemRotation();
                 sun.ShowNonSelectedPlanets();
+                sun.EnableGrabColliders();
                 sun.UnSelectPlanet();
 
                 planetTTS.Stop();
@@ -146,10 +148,9 @@ public class PlanetScaler : MonoBehaviour
             transform.localScale = new Vector3(scale, scale, scale);
 
             yield return null;
-
-            grabbable.enabled = true;
         }
 
+        grabbable.enabled = true;
     }
 
     IEnumerator ScaleBackToSystemScale()
@@ -165,7 +166,9 @@ public class PlanetScaler : MonoBehaviour
 
             yield return null;
 
-            grabbable.enabled = true;
+        
         }
+
+        grabbable.enabled = true;
     }
 }
