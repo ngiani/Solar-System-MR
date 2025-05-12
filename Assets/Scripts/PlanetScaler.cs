@@ -80,7 +80,6 @@ public class PlanetScaler : MonoBehaviour
                 sun.UnSelectPlanet();
 
                 planetTTS.Stop();
-                //systemTTS.Play();
             }
 
             else
@@ -98,9 +97,6 @@ public class PlanetScaler : MonoBehaviour
             sun.SetSelectedPlanet(this);
 
             sun.DisableSystemRotation();
-
-            //if (transform.localScale.x > systemViewScale && transform.localScale.x < planetViewScaleThreshold)
-            //InterruptScaleBackToSystemScale();
         }
 
 
@@ -170,5 +166,14 @@ public class PlanetScaler : MonoBehaviour
         }
 
         grabbable.enabled = true;
+    }
+
+    public void TestEndScaling()
+    {
+        OnStartedScaling();
+
+        transform.localScale = Vector3.one * planetViewScaleThreshold;
+
+        OnEndScaling();
     }
 }

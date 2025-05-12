@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class AsteroidsViewer : MonoBehaviour
+public class AsteroidsViewer : MonoBehaviour, ICelestalBodyViewer
 {
 
     [SerializeField] Animation anim;
@@ -14,6 +14,9 @@ public class AsteroidsViewer : MonoBehaviour
         {
             anim.AddClip(clip, clip.name);
         }
+
+        //Asteroid are initially hidden
+        Show();
     }
 
     // Update is called once per frame
@@ -22,14 +25,14 @@ public class AsteroidsViewer : MonoBehaviour
         
     }
 
-    public void HideAsteroid()
+    public void Hide()
     {
         anim.Stop();
 
         anim.Play(clips[0].name);
     }
 
-    public void ShowAsteroid()
+    public void Show()
     {
         anim.Stop();
 

@@ -23,6 +23,7 @@ namespace Oculus.Interaction
 
         public Transform Pivot => _pivotTransform != null ? _pivotTransform : transform;
 
+
         [SerializeField]
         private Axis _rotationAxis = Axis.Up;
 
@@ -72,6 +73,8 @@ namespace Oculus.Interaction
 
         private Quaternion _localRotation;
         private float _startAngle = 0;
+
+        [SerializeField, Optional]
         private Transform targetTransform;
 
 

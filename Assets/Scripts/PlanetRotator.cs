@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlanetRotator : MonoBehaviour
 {
     [SerializeField] private float systemRotationSpeed;
-    [SerializeField] private float selfRotationSpeed;
     [SerializeField] private MyOneGrabRotateTransformer oneGrabRotateTransformer;
     [SerializeField] private PlanetViewer planetViewer;
 
@@ -14,6 +13,8 @@ public class PlanetRotator : MonoBehaviour
 
     float planetGrabRotationSpeed;
     bool planetGrabRotationEnabled;
+
+    public bool PlanetGrabRotationEnabled => planetGrabRotationEnabled;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -27,9 +28,6 @@ public class PlanetRotator : MonoBehaviour
 
     private void OnEndRotating()
     {
-        Debug.Log("END ROTATION");
-
-        Debug.Log("GET VIEW MODE " +  planetViewer.ViewMode.ToString());
         
         if (planetViewer.ViewMode == PlanetViewer.PlanetViewMode.SYSTEM)
         {
@@ -46,9 +44,6 @@ public class PlanetRotator : MonoBehaviour
 
     private void OnStartRotating()
     {
-        Debug.Log("START ROTATION");
-
-        Debug.Log("GET VIEW MODE " + planetViewer.ViewMode.ToString());
 
         if (planetViewer.ViewMode == PlanetViewer.PlanetViewMode.SYSTEM)
         {
@@ -82,8 +77,7 @@ public class PlanetRotator : MonoBehaviour
         if (planetViewer.ViewMode == PlanetViewer.PlanetViewMode.SYSTEM && sun.SystemRotationEnabled)
             transform.RotateAround(sun.transform.position, sun.transform.up, Time.deltaTime * systemRotationSpeed);
 
-        else if (!planetGrabRotationEnabled)
-            transform.Rotate(0, Time.deltaTime * selfRotationSpeed, 0);
+      
     }
 
 

@@ -1,6 +1,8 @@
+using System.Collections;
+using TMPro;
 using UnityEngine;
 
-public class PlanetViewer : MonoBehaviour
+public class PlanetViewer : MonoBehaviour, ICelestalBodyViewer
 {
     public enum PlanetViewMode { SYSTEM, PLANET}
 
@@ -9,6 +11,9 @@ public class PlanetViewer : MonoBehaviour
 
     [SerializeField] Animation anim;
     [SerializeField] AnimationClip[] clips;
+    [SerializeField] GameObject planetName;
+    [SerializeField] GameObject data;
+    [SerializeField] Light pointLight;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -19,6 +24,9 @@ public class PlanetViewer : MonoBehaviour
         }
 
         viewMode = PlanetViewMode.SYSTEM;
+
+        //Planets are initially hidden
+        Show();
     }
 
     // Update is called once per frame
@@ -30,28 +38,43 @@ public class PlanetViewer : MonoBehaviour
     public void SetPlanetView()
     {
         viewMode = PlanetViewMode.PLANET;
+
+        data.SetActive(true);
+        pointLight.enabled = true;
     }
 
     public void SetSystemView()
     {
         viewMode = PlanetViewMode.SYSTEM;
+
+        data.SetActive(false);
+        pointLight.enabled = false;
     }
 
-    public void HidePlanet()
+    public void Hide()
     {
         anim.Stop();
 
         anim.Play(clips[0].name);
-
-        Debug.Log("STARTED PLAYING " + clips[0].name);
     }
 
-    public void ShowPlanet()
+    public void Show()
     {
         anim.Stop();
 
         anim.Play(clips[1].name);
-
-        Debug.Log("STARTED PLAYING" + clips[1].name);
     }
+
+
+    public void ShowPlanetName()
+    {
+        planetName.SetActive(true);
+    }
+
+    public void HidePlanetName()
+    {
+        planetName.SetActive(false);
+    }
+
+
 }

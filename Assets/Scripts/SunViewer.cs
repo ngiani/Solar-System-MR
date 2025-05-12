@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SunViewer : MonoBehaviour
+public class SunViewer : MonoBehaviour, ICelestalBodyViewer
 {
     [SerializeField] Animation anim;
     [SerializeField] AnimationClip[] clips;
@@ -12,6 +12,8 @@ public class SunViewer : MonoBehaviour
         {
             anim.AddClip(clip, clip.name);
         }
+
+        Show();
     }
     // Update is called once per frame
     void Update()
@@ -19,14 +21,14 @@ public class SunViewer : MonoBehaviour
 
     }
 
-    public void HideSun()
+    public void Hide()
     {
         anim.Stop();
 
         anim.Play(clips[0].name);
     }
 
-    public void ShowSun()
+    public void Show()
     {
         anim.Stop();
 

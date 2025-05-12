@@ -47,12 +47,12 @@ public class SolarSystem : MonoBehaviour
         foreach (PlanetViewer planet in planets)
         {
             if (!planet.gameObject.Equals(selectedPlanet.gameObject)) 
-                planet.HidePlanet();
+                planet.Hide();
         }
 
-        asteroids.HideAsteroid();
+        asteroids.Hide();
 
-        sunViewer.HideSun();
+        sunViewer.Hide();
 
         pointLight.enabled = false;
 
@@ -66,12 +66,12 @@ public class SolarSystem : MonoBehaviour
         foreach (PlanetViewer planet in planets)
         {
             if (!planet.gameObject.Equals(selectedPlanet.gameObject))
-                planet.ShowPlanet();
+                planet.Show();
         }
 
-        sunViewer.ShowSun();
+        sunViewer.Show();
 
-        asteroids.ShowAsteroid();
+        asteroids.Show();
 
         pointLight.enabled = true;
 
