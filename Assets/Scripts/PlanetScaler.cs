@@ -19,7 +19,7 @@ public class PlanetScaler : MonoBehaviour
     SolarSystem sun;
 
     float planetViewScale = 0.8F;
-    float planetViewScaleThreshold = 0.4F;
+    [SerializeField] float planetViewScaleThreshold = 0.6F;
     float systemViewScale;
 
 
