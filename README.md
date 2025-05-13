@@ -1,3 +1,5 @@
+**Solar System Mixed Reality**
+
 A Mixed Reality educational app about solar system. Developed with Unity for Meta Quest 3, users can view planets rotate around the sun, interact with the planets with hand tracking, and hear or see a description about each planet
 
 
