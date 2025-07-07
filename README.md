@@ -1,6 +1,6 @@
 # 🌌 Solar-System-MR
 
-**A Mixed Reality tour around the Solar System**, built in Unity and ShaderLab/C++, offering an interactive, immersive experience to explore planets, moons, and more in MR.
+**A Mixed Reality tour around the Solar System**, built in Unity, offering an interactive, immersive experience to explore planets, moons, and more in MR.
 
 ## 🚀 Features
 
