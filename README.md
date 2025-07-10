@@ -5,13 +5,9 @@
 ## 🚀 Features
 
 - **Accurate orbital mechanics**: Planets orbit realistically based on scaled velocity and distance.
-- **Dual-hand distance grab**: Pinch and move planets with either hand—supports grabbing two simultaneously (e.g., Earth in one, Moon in the other).
-- **Planet info UI**: Grabbing a planet opens a panel with essential facts (mass, radius, day/year length, etc.).
-- **Dynamic simulation controls**: Use the palm menu to adjust:
-  - Global rotation/orbit speed multiplier
-  - Individual planet rotation speed
-  - Passthrough layer opacity
-- **Smooth locomotion**: Move around the scene when controllers are detected.
+- **hand distance grab**: Pinch and move planets with one hand
+- **two hand scale** : Scale planets with two hands to open planet view
+- **Planet info UI**: Scaling a planet opens a panel with essential facts (mass, radius, day/year length, etc.).
 
 ## 🎯 Why this project?
 
@@ -21,8 +17,8 @@ Educational and exploratory MR experience to spark curiosity and understanding o
 
 ### Requirements
 
-- Unity 2021+ (tested on 2022.3 LTS)
-- Supported MR headset (e.g., HoloLens 2, Magic Leap, Meta Quest with passthrough, SteamVR)
+- Unity 2022+ (tested on 2022.3 LTS)
+- Supported MR headset Quest 3 and Quest Pro
 - XR Interaction Toolkit & corresponding XR plugin (OpenXR recommended)
 
 ### Installation
