@@ -37,7 +37,6 @@ Educational and exploratory MR experience to spark curiosity and understanding o
 
 - `Assets/` – Contains models, textures, shaders.
 - `Scripts/` – C# logic for orbital movement, interactions, UI.
-- `Shaders/` – Custom shading for planetary surfaces.
 - `Scenes/` – Main scene for solar system tour.
 - `ProjectSettings/` – Unity configuration files.
 
