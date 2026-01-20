@@ -5,8 +5,8 @@
 ## 🚀 Features
 
 - **Accurate orbital mechanics**: Planets orbit realistically based on scaled velocity and distance.
-- **hand distance grab**: Pinch and move planets with one hand
-- **two hand scale** : Scale planets with two hands to open planet view
+- **Hand distance grab**: Pinch and move planets with one hand
+- **Two hand scale** : Scale planets with two hands to open planet view
 - **Planet info UI**: Scaling a planet opens a panel with essential facts (mass, radius, day/year length, etc.).
 
 ## 🎯 Why this project?
